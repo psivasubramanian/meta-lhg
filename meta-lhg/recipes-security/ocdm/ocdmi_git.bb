@@ -14,6 +14,9 @@ S = "${WORKDIR}/git"
 
 EXTRA_OECONF_append = "${@bb.utils.contains('MACHINE_FEATURES', 'optee', '--enable-aes-ta', '', d)} "
 
+CFLAGS_append = " -DWPE=1"
+CXXFLAGS_append = " -DWPE=1"
+
 # * --enable-playready : Enables support for Playready CDMI.
 #
 # * --enable-debug : Builds OCDM with debug symbols and verbose logging.
